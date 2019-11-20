@@ -1,0 +1,61 @@
+#passwordform {
+    box-sizing: border-box;
+    width: 50%;
+    background-color: #ffffff;
+    border-radius: 10px;
+
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+#ritapang {
+    margin: 30px;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#pwhead {
+    margin: 5px;
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#securepasswordarea {
+    box-sizing: border-box;
+    width: auto;
+    border: dashed lightgray 1px;
+    margin: 5px 10px 5px 10px;
+    padding: 0 20px 100px 20px;
+    text-align: center;
+}
+
+#securepassword {
+    height: auto;
+    width: 100%;
+    border: #ffffff;
+    vertical-align: top;
+    color: lightgrey;
+}
+
+.btn-rita1 {
+    background-color: rgb(189, 15, 15);
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+.btn-rita2 {
+    background-color: lightgray;
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+#generate {
+    position: relative;
+    margin-left: 10px;
+}
+#copy {
+    position: relative;
+    margin-right: -80px;
+}
