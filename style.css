@@ -19,24 +19,27 @@ body {
 #pwhead {
     margin: 5px;
     padding: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #securepasswordarea {
     box-sizing: border-box;
     width: auto;
+    height:100%;
     border: dashed lightgray 1px;
     margin: 5px 10px 5px 10px;
     padding: 0 20px 100px 20px;
     text-align: center;
+    background-color: #ffffff;
 }
 
 #securepassword {
-    height: auto;
+    height: 100%;
     width: 100%;
     border: #ffffff;
     vertical-align: top;
     color: lightgrey;
+    background-color: #ffffff;
 }
 
 .btn-rita1 {
