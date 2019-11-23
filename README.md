@@ -19,37 +19,41 @@ Slack - communication tool with my fellow classmates and the teaching team
 
 ## Usage 
 
-1. Click on: https://sevenspell.github.io/Week3-assignment/
+1. Click on: https://sevenspell.github.io/Week3-assignment/ and it will bring you to below page.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot1.png
 
 2. Click on 'Generate Password' button.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot2.png
 
 3. Answer the questions in the 5 alert pop-ups.
 
-img link x5
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot3.png
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot4.png
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot5.png
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot6.png
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot7.png
 
 4. User will be informed when random password has been generated based on their choices.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot8.png
 
 5. Generated password will show up in the textbox replacing the previous placeholder message "Your Secure Password".
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot9.png
 
 6. Click on 'Copy to Clipboard' button.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot10.png
 
 7. User will be informed when password has been copied to clipboard for their usage.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot11.png
 
 8. Error handling: if user chooses 'n' for all character sets, there will be an alert indicating there must be at least one character set chosen. User is then to restart the process by clicking on the 'Generate Password' button again.
 
-img link
+https://github.com/sevenspell/Week3-assignment/blob/master/screenshots/Screenshot12.png
 
 
 ## Credits
@@ -58,7 +62,7 @@ The teaching team - Jack Song, Sandesh Pathek, Harshpreet Singh
 
 Classmates - Dhani Pozniak
 
-They were all very helpful in pointing me in the right direction when I couldn't find any solutions online.
+They were all very helpful in pointing me in the right direction when I couldn't find any solutions online!
 
 
 
