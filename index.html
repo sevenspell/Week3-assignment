@@ -40,7 +40,8 @@
         <div class="row justify-content-center">
             <div class="col-sm-12">
                 <div class="form-group" id="securepasswordarea">
-                    <textarea readonly class="form-control" id="securepassword" placeholder="Your Secure Password"></textarea>
+                    <textarea readonly class="form-control" id="securepassword"
+                        placeholder="Your Secure Password"></textarea>
                 </div>
             </div>
         </div>
@@ -50,8 +51,10 @@
         <div class="row justify-content-left">
             <div class="col-sm-8">
                 <form class="form-group">
-                    <button class="btn btn-rita1 my-2 my-sm-0" type="submit" id="generate" onclick="generatePW(event)">Generate Password</button>
-                    <button class="btn btn-rita2 my-2 my-sm-0" type="submit" id="copy" onclick="copyToClipboard(event)">Copy
+                    <button class="btn btn-rita1 my-2 my-sm-0" type="submit" id="generate"
+                        onclick="generatePW(event)">Generate Password</button>
+                    <button class="btn btn-rita2 my-2 my-sm-0" type="submit" id="copy"
+                        onclick="copyToClipboard(event)">Copy
                         to Clipboard</button>
                 </form>
             </div>
@@ -63,7 +66,7 @@
 
     <script>
         // 1. prep
-        
+
         // variables
         var specialChar = "~!@#$%^&*()_+=-`{}|\][:';<>?/.,";
         var numericChar = "1234567890";
@@ -72,20 +75,18 @@
         var plength = "";
         var userPassword = "";
         var passwordCharSet = "";
-        
 
         var generateButton = document.querySelector("#generate");
         var copyButton = document.querySelector("#copy");
-        var passwordField = document.querySelector("#securepassword");
-
 
         // 2. Upon clicking on Generate Password button:
 
         function generatePW(event) {
 
-            event.preventDefault();
+            event.preventDefault(); // to prevent page refreshing away the password result
 
-            //prompt for userinput
+            //prompt questions for userinput
+
             do {
                 var howManyChar = prompt("How many characters do you want in your password? Min. 8 and Max. 20");
                 if (howManyChar < 8 || howManyChar > 20) {
@@ -93,7 +94,7 @@
                 } else {
                     console.log(howManyChar);
                 }
-            } while (howManyChar < 8 || howManyChar > 20);
+            } while (howManyChar < 8 || howManyChar > 20); // repeat question while input is invalid
 
             do {
                 var specialCharYN = prompt("Do you want special characters in your password? Input 'y' for yes and 'n' for no.");
@@ -102,7 +103,7 @@
                 } else {
                     alert("Invalid input. Please input correct value.");
                 }
-            } while (specialCharYN != "y" && specialCharYN != "n");
+            } while (specialCharYN != "y" && specialCharYN != "n"); // repeat question while input is invalid
 
             do {
                 var numCharYN = prompt("Do you want numeric characters in your password? Input 'y' for yes and 'n' for no.");
@@ -111,8 +112,7 @@
                 } else {
                     alert("Invalid input. Please input correct value.");
                 }
-            } while (numCharYN != "y" && numCharYN != "n");
-
+            } while (numCharYN != "y" && numCharYN != "n"); // repeat question while input is invalid
 
             do {
                 var upperCaseYN = prompt("Do you want uppercase characters in your password? Input 'y' for yes and 'n' for no.");
@@ -121,7 +121,7 @@
                 } else {
                     alert("Invalid input. Please input correct value.");
                 }
-            } while (upperCaseYN != "y" && upperCaseYN != "n");
+            } while (upperCaseYN != "y" && upperCaseYN != "n"); // repeat question while input is invalid
 
             do {
                 var lowerCaseYN = prompt("Do you want lowercase characters in your password? Input 'y' for yes and 'n' for no.");
@@ -130,57 +130,59 @@
                 } else {
                     alert("Invalid input. Please input correct value.");
                 }
-            } while (lowerCaseYN != "y" && lowerCaseYN != "n");
+            } while (lowerCaseYN != "y" && lowerCaseYN != "n"); // repeat question while input is invalid
 
+            if (lowerCaseYN == "n" &&
+                upperCaseYN == "n" &&
+                numCharYN == "n" &&
+                specialCharYN == "n") {
+                alert("Error! Password must have at least one type of character set. Click the 'Generate Password' button to try again.");
+                return;
+            } //check for overall validity to ensure at least one character set chosen. if not, ask user to repeat process with valid input.
 
             //define password properties
 
             if (specialCharYN === "y") {
-                passwordCharSet += specialChar;
+                passwordCharSet += specialChar; //parsing on string if chosen by user
             }
             if (numCharYN === "y") {
-                passwordCharSet += numericChar;
+                passwordCharSet += numericChar; //parsing on string if chosen by user
             }
             if (upperCaseYN === "y") {
-                passwordCharSet += upperCase;
+                passwordCharSet += upperCase; //parsing on string if chosen by user
             }
             if (lowerCaseYN === "y") {
-                passwordCharSet += lowerCase;
+                passwordCharSet += lowerCase; //parsing on string if chosen by user
             }
 
-            console.log(passwordCharSet);
-            var numSet = passwordCharSet.length;
+            console.log(passwordCharSet); // log total parsed string for later random generation
+            var numSet = passwordCharSet.length; // log total number of characters in the string for later calculation for random generation
 
             //randomly generate password based on logged answers
-            plength = parseInt(howManyChar);
+            plength = parseInt(howManyChar); //log length of password chosen by user to be used for later for loop
 
+            // for loop to randomly calculate and pick characters from passwordCharSet to form userPassword based on plength
             for (var i = 0; i < plength; i++) {
                 userPassword += passwordCharSet.charAt(Math.floor(Math.random() * numSet));
             };
 
-            //log generated password to console.log and alert user.
+            //log generated password to console.log and textarea and alert user.
             console.log(userPassword);
-            document.getElementById("securepassword").textContent = userPassword;
-            // var userPasswordLog = userPassword;
-            // passwordField.innerHTML = userPassword;
-            // passwordField = userPassword;
+            document.getElementById("securepassword").textContent = userPassword; // parsing to textarea
             var promptUser = alert("Your password has been generated. Click on 'Copy to Clipboard' to use it.");
             return userPassword;
         };
 
 
-    // 15. Allow user to copy to clipboard
+        // 15. Allow user to copy to clipboard
 
-            function copyToClipboard(event) {
-                event.preventDefault();
-                var passwordCopy = document.getElementById("securepassword");
-                //console.log(passwordEl);
-                passwordCopy.select();
-                document.execCommand('copy');
-                alert("Password copied to clipboard.");
-                }
-
-
+        function copyToClipboard(event) {
+            event.preventDefault(); // to prevent password result from being refreshed away
+            var passwordCopy = document.getElementById("securepassword"); // to parse password result to passwordCopy for select/copy
+            passwordCopy.select(); // select password result
+            document.execCommand('copy'); // copy password result
+            alert("Password copied to clipboard."); // inform user password copied to clipboard
+        }
 
     </script>
 

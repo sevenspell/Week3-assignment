@@ -40,6 +40,7 @@ body {
     vertical-align: top;
     color: lightgrey;
     background-color: #ffffff;
+    resize:none;
 }
 
 .btn-rita1 {
